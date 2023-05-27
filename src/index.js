@@ -26,9 +26,9 @@ function createSelect(data) {
     backgroundEl.append(imgEl);
     imgEl.src = data[i].image.url;
     imgEl.style.cssText = 'width: 150px; margin: 5px';
-    interval = setInterval(() => {
-      imgEl.style.opacity = `${Math.random()}`;
-    }, 1000);
+    // interval = setInterval(() => {
+    //   imgEl.style.opacity = `${Math.random()}`;
+    // }, 1000);
   }
   for (let i = 0; i < data.length; i += 1) {
     const option = document.createElement('option');
