@@ -26,9 +26,6 @@ function createSelect(data) {
     backgroundEl.append(imgEl);
     imgEl.src = data[i].image.url;
     imgEl.style.cssText = 'width: 150px; margin: 5px';
-    // interval = setInterval(() => {
-    //   imgEl.style.opacity = `${Math.random()}`;
-    // }, 1000);
   }
   for (let i = 0; i < data.length; i += 1) {
     const option = document.createElement('option');
@@ -90,6 +87,10 @@ fetchBreeds()
       'Oops! Something went wrong! Try reloading the page!'
     );
   });
+
+interval = setInterval(() => {
+  imgEl.style.opacity = `${Math.random()}`;
+}, 1000);
 
 selectEl.addEventListener('change', e => {
   backgroundEl.style.opacity = '0';
