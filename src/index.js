@@ -9,6 +9,8 @@ const backgroundEl = document.createElement('div');
 selectEl.before(backgroundEl);
 backgroundEl.style.cssText =
   'position: absolute; z-index: -1; display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap;';
+let interval;
+
 // const buttonEl = document.createElement('button');
 // loaderEl.before(buttonEl);
 // buttonEl.textContent = 'НАТИСНИ МЕНЕ';
@@ -26,6 +28,9 @@ function createSelect(data) {
     backgroundEl.append(imgEl);
     imgEl.src = data[i].image.url;
     imgEl.style.cssText = 'width: 150px; margin: 5px';
+    interval = setInterval(() => {
+      imgEl.style.opacity = `${Math.random()}`;
+    }, 1000);
   }
   for (let i = 0; i < data.length; i += 1) {
     const option = document.createElement('option');
@@ -87,10 +92,6 @@ fetchBreeds()
       'Oops! Something went wrong! Try reloading the page!'
     );
   });
-
-interval = setInterval(() => {
-  imgEl.style.opacity = `${Math.random()}`;
-}, 1000);
 
 selectEl.addEventListener('change', e => {
   backgroundEl.style.opacity = '0';
