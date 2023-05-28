@@ -35,11 +35,7 @@ function createSelect(data) {
     option.textContent = `${data[i].name}`;
     option.value = data[i].reference_image_id;
   }
-  selectEl.style.opacity = '1';
-  loaderEl.style.opacity = '0';
-  new SlimSelect({
-    select: '#selectElement',
-  });
+  backgroundEl.style.opacity = '0';
 }
 
 function createCardInfo(data) {
@@ -51,6 +47,14 @@ function createCardInfo(data) {
   loaderEl.style.opacity = '0';
   backgroundEl.style.opacity = '1';
 }
+
+fetchBreeds()
+  .then(createSelect)
+  .catch(error => {
+    Notiflix.Notify.failure(
+      'Oops! Something went wrong! Try reloading the page!'
+    );
+  });
 
 buttonEl.addEventListener('click', () => {
   buttonEl.remove();
@@ -77,14 +81,11 @@ buttonEl.addEventListener('click', () => {
         buttonFourEl.remove();
         numberEl.remove();
         backgroundEl.style.opacity = '1';
-
-        fetchBreeds()
-          .then(createSelect)
-          .catch(error => {
-            Notiflix.Notify.failure(
-              'Oops! Something went wrong! Try reloading the page!'
-            );
-          });
+        loaderEl.style.opacity = '0';
+        selectEl.style.opacity = '1';
+        new SlimSelect({
+          select: '#selectElement',
+        });
       });
     });
   });
