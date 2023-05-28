@@ -74,7 +74,6 @@ buttonEl.addEventListener('click', () => {
         numberEl.remove();
         selectEl.style.opacity = '1';
         backgroundEl.style.opacity = '1';
-        loaderEl.style.opacity = '0';
 
         fetchBreeds()
           .then(createSelect)
