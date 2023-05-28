@@ -11,16 +11,12 @@ backgroundEl.style.cssText =
   'position: absolute; z-index: -1; display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap;';
 let interval;
 
-// const buttonEl = document.createElement('button');
-// loaderEl.before(buttonEl);
-// buttonEl.textContent = 'НАТИСНИ МЕНЕ';
-// const numberEl = document.createElement('h1');
-// buttonEl.before(numberEl);
-// numberEl.textContent = '3';
-
-// function createBackground(data) {
-//   // backgroundEl.style.opacity = '0';
-// }
+const buttonEl = document.createElement('button');
+loaderEl.before(buttonEl);
+buttonEl.textContent = 'НАТИСНИ МЕНЕ';
+const numberEl = document.createElement('h1');
+buttonEl.before(numberEl);
+numberEl.textContent = '3';
 
 function createSelect(data) {
   for (let i = 0; i < 30; i += 1) {
@@ -55,43 +51,42 @@ function createCardInfo(data) {
   backgroundEl.style.opacity = '1';
 }
 
-// buttonEl.addEventListener('click', () => {
-//   buttonEl.remove();
-//   numberEl.textContent = '2';
-//   const buttonTwoEl = document.createElement('button');
-//   loaderEl.before(buttonTwoEl);
-//   buttonTwoEl.textContent = 'ЩЕ РАЗОЧОК';
-//   buttonTwoEl.addEventListener('click', () => {
-//     buttonTwoEl.remove();
-//     numberEl.textContent = '1';
-//     const buttonThreeEl = document.createElement('button');
-//     loaderEl.before(buttonThreeEl);
-//     buttonThreeEl.textContent = 'ЩЕ, БО ТАК ТРЕБА..';
-//     buttonThreeEl.addEventListener('click', () => {
-//       buttonThreeEl.remove();
-//       numberEl.textContent = '99999';
-//       const buttonFourEl = document.createElement('button');
-//       loaderEl.before(buttonFourEl);
-//       buttonFourEl.textContent = '¯\\_(ツ)_/¯';
-//       buttonFourEl.addEventListener('click', () => {
-//         buttonFourEl.remove();
-//         numberEl.remove();
-//         selectEl.style.opacity = '1';
-//         backgroundEl.style.opacity = '1';
-//         loaderEl.style.opacity = '0';
+buttonEl.addEventListener('click', () => {
+  buttonEl.remove();
+  numberEl.textContent = '2';
+  const buttonTwoEl = document.createElement('button');
+  loaderEl.before(buttonTwoEl);
+  buttonTwoEl.textContent = 'ЩЕ РАЗОЧОК';
+  buttonTwoEl.addEventListener('click', () => {
+    buttonTwoEl.remove();
+    numberEl.textContent = '1';
+    const buttonThreeEl = document.createElement('button');
+    loaderEl.before(buttonThreeEl);
+    buttonThreeEl.textContent = 'ЩЕ, БО ТАК ТРЕБА..';
+    buttonThreeEl.addEventListener('click', () => {
+      buttonThreeEl.remove();
+      numberEl.textContent = '99999';
+      const buttonFourEl = document.createElement('button');
+      loaderEl.before(buttonFourEl);
+      buttonFourEl.textContent = '¯\\_(ツ)_/¯';
+      buttonFourEl.addEventListener('click', () => {
+        buttonFourEl.remove();
+        numberEl.remove();
+        selectEl.style.opacity = '1';
+        backgroundEl.style.opacity = '1';
+        loaderEl.style.opacity = '0';
 
-//       });
-//     });
-//   });
-// });
-
-fetchBreeds()
-  .then(createSelect)
-  .catch(error => {
-    Notiflix.Notify.failure(
-      'Oops! Something went wrong! Try reloading the page!'
-    );
+        fetchBreeds()
+          .then(createSelect)
+          .catch(error => {
+            Notiflix.Notify.failure(
+              'Oops! Something went wrong! Try reloading the page!'
+            );
+          });
+      });
+    });
   });
+});
 
 selectEl.addEventListener('change', e => {
   backgroundEl.style.opacity = '0';
