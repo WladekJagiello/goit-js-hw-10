@@ -14,6 +14,7 @@ let interval;
 const buttonEl = document.createElement('button');
 loaderEl.before(buttonEl);
 buttonEl.textContent = 'НАТИСНИ МЕНЕ';
+buttonEl.style.cursor = 'pointer';
 const numberEl = document.createElement('h1');
 buttonEl.before(numberEl);
 numberEl.textContent = '3';
@@ -57,18 +58,21 @@ buttonEl.addEventListener('click', () => {
   const buttonTwoEl = document.createElement('button');
   loaderEl.before(buttonTwoEl);
   buttonTwoEl.textContent = 'ЩЕ РАЗОЧОК';
+  buttonTwoEl.style.cursor = 'pointer';
   buttonTwoEl.addEventListener('click', () => {
     buttonTwoEl.remove();
     numberEl.textContent = '1';
     const buttonThreeEl = document.createElement('button');
     loaderEl.before(buttonThreeEl);
     buttonThreeEl.textContent = 'ЩЕ, БО ТАК ТРЕБА..';
+    buttonThreeEl.style.cursor = 'pointer';
     buttonThreeEl.addEventListener('click', () => {
       buttonThreeEl.remove();
       numberEl.textContent = '99999';
       const buttonFourEl = document.createElement('button');
       loaderEl.before(buttonFourEl);
       buttonFourEl.textContent = '¯\\_(ツ)_/¯';
+      buttonFourEl.style.cursor = 'pointer';
       buttonFourEl.addEventListener('click', () => {
         buttonFourEl.remove();
         numberEl.remove();
