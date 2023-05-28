@@ -72,7 +72,6 @@ buttonEl.addEventListener('click', () => {
       buttonFourEl.addEventListener('click', () => {
         buttonFourEl.remove();
         numberEl.remove();
-        selectEl.style.opacity = '1';
         backgroundEl.style.opacity = '1';
 
         fetchBreeds()
