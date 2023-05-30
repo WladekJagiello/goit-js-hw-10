@@ -9,10 +9,12 @@ const infoEl = document.querySelector('.cat-info');
 let interval;
 
 function createOptions(data) {
-  data.map(
-    elem =>
-      (selectEl.innerHTML += `<option value="${elem.reference_image_id}">${elem.name}</option>`)
-  );
+  data
+    .filter(elem => elem.reference_image_id !== undefined)
+    .map(
+      elem =>
+        (selectEl.innerHTML += `<option value="${elem.reference_image_id}">${elem.name}</option>`)
+    );
   selectEl.style.opacity = '1';
   loaderEl.style.opacity = '0';
 }
