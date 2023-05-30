@@ -32,10 +32,10 @@ function newSelect() {
 //       elem =>
 //         (backgroundEl.innerHTML += `<img src="${elem.image.url}" width="100" style="margin: 2px;>`)
 //     );
+//   interval = setInterval(() => {
 //     const imgEl = document.querySelector('img');
-//     interval = setInterval(() => {
-//       imgEl.style.opacity = `${Math.random()}`;
-//     }, 1000);
+//     imgEl.style.opacity = `${Math.random()}`;
+//   }, 1000);
 // }
 
 function createBackground(data) {
@@ -44,7 +44,7 @@ function createBackground(data) {
       const imgEl = document.createElement('img');
       backgroundEl.append(imgEl);
       imgEl.src = elem.image.url;
-      imgEl.style.cssText = 'width: 100px; margin: 5px';
+      imgEl.style.cssText = 'width: 100px; margin: 2px';
       interval = setInterval(() => {
         imgEl.style.opacity = `${Math.random()}`;
       }, 1000);
