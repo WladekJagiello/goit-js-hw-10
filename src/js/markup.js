@@ -26,19 +26,20 @@ function newSelect() {
 }
 
 // function createBackground(data) {
-//   interval = setInterval(() => {
-//     Math.random();
-//   }, 1000);
 //   data
 //     .filter(elem => elem.reference_image_id !== undefined)
 //     .map(
 //       elem =>
-//         (backgroundEl.innerHTML += `<img src="${elem.image.url}" width="150" style="margin: 5px; opacity="${interval}">`)
+//         (backgroundEl.innerHTML += `<img src="${elem.image.url}" width="100" style="margin: 2px;>`)
 //     );
+//     const imgEl = document.querySelector('img');
+//     interval = setInterval(() => {
+//       imgEl.style.opacity = `${Math.random()}`;
+//     }, 1000);
 // }
 
 function createBackground(data) {
-  for (elem of data) {
+  for (let elem of data) {
     if (elem.reference_image_id !== undefined) {
       const imgEl = document.createElement('img');
       backgroundEl.append(imgEl);
