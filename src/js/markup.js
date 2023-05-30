@@ -6,6 +6,7 @@ backgroundEl.style.cssText =
 const selectEl = document.getElementById('selectElement');
 const loaderEl = document.querySelector('.loader');
 const infoEl = document.querySelector('.cat-info');
+let interval;
 
 function createOptions(data) {
   data.map(

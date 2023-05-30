@@ -2,6 +2,9 @@ import Notiflix from 'notiflix';
 import { fetchBreeds, fetchCatByBreed } from './js/cat-api';
 import { createMarkup, createCardInfo } from './js/markup';
 
+const bodyEl = document.querySelector('body');
+const backgroundEl = document.createElement('div');
+bodyEl.prepend(backgroundEl);
 const loaderEl = document.querySelector('.loader');
 const infoEl = document.querySelector('.cat-info');
 const selectEl = document.getElementById('selectElement');
