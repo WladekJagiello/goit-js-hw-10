@@ -44,7 +44,7 @@ function createBackground(data) {
       const imgEl = document.createElement('img');
       backgroundEl.append(imgEl);
       imgEl.src = elem.image.url;
-      imgEl.style.cssText = 'width: 100px; margin: 2px';
+      imgEl.style.cssText = 'width: 125px; margin: 3px';
       interval = setInterval(() => {
         imgEl.style.opacity = `${Math.random()}`;
       }, 1000);
