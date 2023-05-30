@@ -62,6 +62,7 @@ function createCardInfo(data) {
   infoEl.innerHTML = `<img src="${data.url}" width="100%"><div style="padding: 15px; padding-top: 0;"><h1>${data.breeds[0].name}</h1><p>${data.breeds[0].description}</p><b>Temperament: </b><span> ${data.breeds[0].temperament}</span></div>`;
   infoEl.style.cssText = `width: 350px; margin-top: 75px; margin-left: auto; margin-right: auto; border: 2mm ridge rgba(211, 211, 211, .5); background-color: #fff;`;
   loaderEl.style.opacity = '0';
+  backgroundEl.style.opacity = '1';
 }
 
 export { createMarkup, createCardInfo };

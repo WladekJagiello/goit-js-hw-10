@@ -17,6 +17,8 @@ fetchBreeds()
   });
 
 selectEl.addEventListener('change', e => {
+  const backgroundEl = document.querySelector('div');
+  backgroundEl.style.opacity = '0';
   loaderEl.style.opacity = '1';
   infoEl.innerHTML = '';
   infoEl.style.cssText = '';
