@@ -2,7 +2,7 @@ const bodyEl = document.querySelector('body');
 const backgroundEl = document.createElement('div');
 bodyEl.prepend(backgroundEl);
 backgroundEl.style.cssText =
-  'position: absolute; z-index: -1; display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap;';
+  'position: absolute; z-index: -1; top: 40px; display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap;';
 const selectEl = document.getElementById('selectElement');
 const loaderEl = document.querySelector('.loader');
 const infoEl = document.querySelector('.cat-info');
