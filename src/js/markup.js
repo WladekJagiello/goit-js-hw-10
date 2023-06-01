@@ -25,32 +25,34 @@ function newSelect() {
   });
 }
 
-// function createBackground(data) {
-//   data
-//     .filter(elem => elem.reference_image_id !== undefined)
-//     .map(
-//       elem =>
-//         (backgroundEl.innerHTML += `<img src="${elem.image.url}" width="100" style="margin: 2px;>`)
-//     );
-//   interval = setInterval(() => {
-//     const imgEl = document.querySelector('img');
-//     imgEl.style.opacity = `${Math.random()}`;
-//   }, 1000);
-// }
-
 function createBackground(data) {
-  for (let elem of data) {
-    if (elem.reference_image_id !== undefined) {
-      const imgEl = document.createElement('img');
-      backgroundEl.append(imgEl);
-      imgEl.src = elem.image.url;
-      imgEl.style.cssText = 'width: 125px; margin: 3px';
-      interval = setInterval(() => {
-        imgEl.style.opacity = `${Math.random()}`;
-      }, 1000);
-    }
-  }
+  data
+    .filter(elem => elem.reference_image_id !== undefined)
+    .map(
+      elem =>
+        (backgroundEl.innerHTML += `<img src="${elem.image.url}" style="width: 125px; margin: 3px" />`)
+    );
+  setInterval(() => {
+    const imgEl = backgroundEl.querySelectorAll('img');
+    imgEl.forEach(img => {
+      img.style.opacity = `${Math.random()}`;
+    });
+  }, 1000);
 }
+
+// function createBackground(data) {
+//   for (let elem of data) {
+//     if (elem.reference_image_id !== undefined) {
+//       const imgEl = document.createElement('img');
+//       backgroundEl.append(imgEl);
+//       imgEl.src = elem.image.url;
+//       imgEl.style.cssText = 'width: 125px; margin: 3px';
+//       interval = setInterval(() => {
+//         imgEl.style.opacity = `${Math.random().toFixed(3)}`;
+//       }, 1000);
+//     }
+//   }
+// }
 
 function createMarkup(data) {
   createOptions(data);
