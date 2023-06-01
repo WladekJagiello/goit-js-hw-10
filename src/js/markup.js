@@ -6,7 +6,6 @@ backgroundEl.style.cssText =
 const selectEl = document.getElementById('selectElement');
 const loaderEl = document.querySelector('.loader');
 const infoEl = document.querySelector('.cat-info');
-let interval;
 
 function createOptions(data) {
   data
@@ -40,20 +39,6 @@ function createBackground(data) {
   }, 1000);
 }
 
-// function createBackground(data) {
-//   for (let elem of data) {
-//     if (elem.reference_image_id !== undefined) {
-//       const imgEl = document.createElement('img');
-//       backgroundEl.append(imgEl);
-//       imgEl.src = elem.image.url;
-//       imgEl.style.cssText = 'width: 125px; margin: 3px';
-//       interval = setInterval(() => {
-//         imgEl.style.opacity = `${Math.random().toFixed(3)}`;
-//       }, 1000);
-//     }
-//   }
-// }
-
 function createMarkup(data) {
   createOptions(data);
   newSelect();
@@ -61,7 +46,7 @@ function createMarkup(data) {
 }
 
 function createCardInfo(data) {
-  infoEl.innerHTML = `<img src="${data.url}" width="100%"><div style="padding: 15px; padding-top: 0;"><h1>${data.breeds[0].name}</h1><p>${data.breeds[0].description}</p><b>Temperament: </b><span> ${data.breeds[0].temperament}</span></div>`;
+  infoEl.innerHTML = `<img src="${data.url}" width="100%"><div style="padding: 15px; padding-top: 0;"><h1>${data.breeds.name}</h1><p>${data.breeds.description}</p><b>Temperament: </b><span> ${data.breeds.temperament}</span></div>`;
   infoEl.style.cssText = `width: 350px; margin-top: 75px; margin-left: auto; margin-right: auto; border: 2mm ridge rgba(211, 211, 211, .5); background-color: #fff;`;
   loaderEl.style.opacity = '0';
   backgroundEl.style.opacity = '1';
