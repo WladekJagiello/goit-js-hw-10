@@ -1,3 +1,4 @@
+import SlimSelect from 'slim-select';
 const bodyEl = document.querySelector('body');
 const backgroundEl = document.createElement('div');
 bodyEl.prepend(backgroundEl);
@@ -19,9 +20,10 @@ function createOptions(data) {
 }
 
 function newSelect() {
-  new SlimSelect({
-    select: '#selectElement',
-  });
+  // new SlimSelect({
+  //   select: '#selectElement',
+  // });
+  new SlimSelect({ select: selectEl });
 }
 
 function createBackground(data) {
